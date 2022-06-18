@@ -57,4 +57,10 @@ pub fn run(){
     println!("{:?}", v); //print vector
     println!("{}", v[0]); //print vector element
 
+    v.pop(); //remove last added element from vector
+    
+    for i in v.iter_mut() {  //iterate over vector 
+        *i *= 2;               // mutate the vector element by multiplying it by 2
+        println!("Number: {}", i);
+    }
 }
