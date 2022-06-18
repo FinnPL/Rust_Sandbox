@@ -17,6 +17,10 @@ Tuple: Tuple structs are useful for grouping together related values.
 Array: Arrays are a fixed size collection of values of the same type.
        They are used when you know exactly how many values you want to store.
        They are also used when you want to store a collection of the same type.
+
+Vector: Vectors are growable arrays.
+        They are used when you don't know how many values you want to store.
+        They are also used when you want to store a collection of the same type.
 */
 
 pub fn run(){
@@ -40,8 +44,17 @@ pub fn run(){
     println!("{:?}",(x,y,z));
 
     //Array
-    let a = [1,2,3,4,5]; //create an array
+    let a: [i32; 5] = [1,2,3,4,5]; //create an array 
     println!("{:?}", a); //print array
     println!("{}", a[0]); //print array element
-    
+
+    let slice: &[i32] = &a[0..2];//create a slice
+    println!("{:?}", slice); //print slice
+
+    //Vector
+    let mut v:Vec<i32>= vec![1,2,3,4,5]; //create a vector
+    v.push(6); //add element to vector
+    println!("{:?}", v); //print vector
+    println!("{}", v[0]); //print vector element
+
 }
